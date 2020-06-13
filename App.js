@@ -51,8 +51,7 @@ export default class App extends React.Component
         loading:false,
         tableHead: ['codigo','pais','confirmados','recuperados','muertos'],
         tableData: [
-          array,
-          ['codigo','pais','confirmados','recuperados','muertos']
+          array
         ]
       })
     })
@@ -71,8 +70,10 @@ export default class App extends React.Component
            <SelectInput style={{margin:50}} value={0} options={state.options} onSubmitEditing={this.changeCountry.bind(this)} />
           <Table borderStyle={{borderWidth: 2, borderColor: '#c8e1ff',width: 200}}>
             <Row data={state.tableHead} style={styles.head} textStyle={styles.text}/>
-            <Rows data={state.tableData} textStyle={styles.text}/>
+            <Rows data={state.tableData} textStyle={styles.text}/> 
           </Table>
+
+          <Text style={{ color:"#fff" }}>Selecciona un pais</Text>
         </View>
         );
     }
@@ -86,8 +87,8 @@ export default class App extends React.Component
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#c3c3c3' },
-  head: { height: 40, backgroundColor: '#f1f8ff' },
+  container: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#57e073' },
+  head: { height: 40, backgroundColor: '#b7cff8', color: '#fff' },
   text: { margin: 6 }
 });
 
